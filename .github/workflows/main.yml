@@ -22,6 +22,8 @@ jobs:
     
     - run: ls
     
+    - run: docker build -t counter-image -f Dockerfile .
+
     - run: |
-        docker build -t docker.pkg.github.com/demoserievideo/sample-artifact-docker:${{ github.sha }} -f Dockerfile .
-        docker push docker.pkg.github.com/demoserievideo/sample-artifact-docker:${{ github.sha }}
+        docker build -t docker.pkg.github.com/demoserievideo/sample-artifact-docker:latest -f Dockerfile .
+        docker push docker.pkg.github.com/demoserievideo/sample-artifact-docker:latest
