@@ -21,6 +21,6 @@ jobs:
         password: ${{ secrets.GH_PACKAGES_TOKEN }}
     
     - run: |
-        docker build -t docker.pkg.github.com/demoserievideo/sample-artifact-docker/sample:${{ github.sha }} -f Dockerfile .
+        docker build -t docker.pkg.github.com/demoserievideo/sample-artifact-docker/sample:latest -f Dockerfile .
         docker login docker.pkg.github.com -u ${{ secrets.GH_PACKAGES_USER }} -p ${{ secrets.GH_PACKAGES_TOKEN }}
-        docker push docker.pkg.github.com/demoserievideo/sample-artifact-docker/sample:${{ github.sha }}
+        docker push docker.pkg.github.com/demoserievideo/sample-artifact-docker/sample:latest
