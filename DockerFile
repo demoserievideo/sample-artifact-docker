@@ -10,5 +10,5 @@ RUN dotnet build
 RUN dotnet publish -c Release
 
 WORKDIR /App/bin/Release/netcoreapp3.1/publish/
-
+#
 ENTRYPOINT ["dotnet", "sample-artifact-docker.dll"]
