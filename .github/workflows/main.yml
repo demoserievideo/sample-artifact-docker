@@ -20,11 +20,6 @@ jobs:
         username: ${{ secrets.GH_PACKAGES_USER }}
         password: ${{ secrets.GH_PACKAGES_TOKEN }}
     
-    - run: ls
-    
-    - run: docker build -t counter-image -f Dockerfile .
-      working-directory: /home/runner/work/sample-artifact-docker/sample-artifact-docker
-
     - run: |
         docker build -t docker.pkg.github.com/demoserievideo/sample-artifact-docker:latest -f Dockerfile .
         docker push docker.pkg.github.com/demoserievideo/sample-artifact-docker:latest
