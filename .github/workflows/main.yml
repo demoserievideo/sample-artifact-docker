@@ -17,7 +17,7 @@ jobs:
     - uses: docker/build-push-action@v1
       with:
         username: julioarruda
-        password: ${{ secrets.GH_PACKAGES_TOKEN }}
+        password: 0cd9d43c4a141d6438d95ffd46e7cb467805417a
         repository: docker.pkg.github.com
         tags: latest
 
