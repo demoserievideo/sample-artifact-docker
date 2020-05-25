@@ -22,5 +22,5 @@ jobs:
     
     - run: |
         docker build -t docker.pkg.github.com/demoserievideo/sample-artifact-docker/sample:latest -f Dockerfile .
-        ${{ secrets.GITHUB_TOKEN }} | docker login https://docker.pkg.github.com -u ${{ secrets.GH_PACKAGES_USER }}  --password-stdin
+        docker login docker.pkg.github.com -u ${{ secrets.GH_PACKAGES_USER }} -p ${{ secrets.GITHUB_TOKEN }}
         docker push docker.pkg.github.com/demoserievideo/sample-artifact-docker/sample:latest
