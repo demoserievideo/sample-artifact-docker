@@ -17,7 +17,9 @@ jobs:
         login-server: docker.pkg.github.com
         username: ${{ secrets.GH_PACKAGES_USER }}
         password: ${{ secrets.GH_PACKAGES_TOKEN }}
-        
+    
+    - run: ls
+    
     - run: |
         docker build . -t docker.pkg.github.com/demoserievideo/sample-artifact-docker:${{ github.sha }}
         docker push docker.pkg.github.com/demoserievideo/sample-artifact-docker:${{ github.sha }}
