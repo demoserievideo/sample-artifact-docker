@@ -18,7 +18,7 @@ jobs:
       with:
         username: julioarruda
         password: ${{ secrets.GH_PACKAGES_TOKEN }}
-        repository: docker.pkg.github.com/demoserievideo/sample-artifact-docker
+        repository: docker.pkg.github.com
         tags: latest
 
     - uses: azure/docker-login@v1
