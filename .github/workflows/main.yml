@@ -16,7 +16,7 @@ jobs:
 
     - uses: docker/build-push-action@v1
       with:
-        username: ${{ secrets.GH_PACKAGES_USER }}
+        username: julioarruda
         password: ${{ secrets.GH_PACKAGES_TOKEN }}
         repository: docker.pkg.github.com/demoserievideo/sample-artifact-docker
         tags: latest
