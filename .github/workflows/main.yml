@@ -1,0 +1,23 @@
+name: Push Container to Artifacts
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+    - uses: azure/docker-login@v1
+      with:
+        login-server: docker.pkg.github.com
+        username: ${{ secrets.GH_PACKAGES_USER }}
+        password: ${{ secrets.GH_PACKAGES_TOKEN }}
+        
+    - run: |
+        docker build . -t docker.pkg.github.com/demoserievideo/sample-artifact-docker:${{ github.sha }}
+        docker push docker.pkg.github.com/demoserievideo/sample-artifact-docker:${{ github.sha }}
