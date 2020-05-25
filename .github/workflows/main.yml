@@ -23,7 +23,7 @@ jobs:
     - run: ls
     
     - run: docker build -t counter-image -f Dockerfile .
-      working-directory: $Env:GITHUB_WORKSPACE\sample-artifact-docker
+      working-directory: /home/runner/work/sample-artifact-docker/sample-artifact-docker
 
     - run: |
         docker build -t docker.pkg.github.com/demoserievideo/sample-artifact-docker:latest -f Dockerfile .
