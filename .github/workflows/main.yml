@@ -18,7 +18,7 @@ jobs:
       with:
         login-server: ghcr.io
         username: ${{ secrets.GH_PACKAGES_USER }}
-        password: ${{ secrets.GITHUB_TOKEN }}
+        password: ${{ secrets.GH_PACKAGES_TOKEN }}
     
     - run: |
         docker build -t ghcr.io/demoserievideo/sample-artifact-docker/sample:latest -f Dockerfile .
