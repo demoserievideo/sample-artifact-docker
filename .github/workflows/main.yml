@@ -21,5 +21,5 @@ jobs:
         password: ${{ secrets.GITHUB_TOKEN }}
     
     - run: |
-        docker build -t docker.pkg.github.com/demoserievideo/sample-artifact-docker/sample:latest -f Dockerfile .
-        docker push docker.pkg.github.com/demoserievideo/sample-artifact-docker/sample:latest
+        docker build -t ghcr.io/demoserievideo/sample-artifact-docker/sample:latest -f Dockerfile .
+        docker push ghcr.io/demoserievideo/sample-artifact-docker/sample:latest
